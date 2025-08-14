@@ -182,7 +182,7 @@
 
             <div id="mobile-menu" class="md:hidden hidden pb-4">
                 <a href="#about" class="block py-2 text-slate-600 dark:text-slate-300">О системе</a>
-                <a href="#features" class="block py-2 text-slate-600 dark:text-slate-300">Возможности</a>
+                <a href="#features" class="block py-2 text-slate-600 dark:text-slate-300">сти</a>
                 <a href="#pricing" class="block py-2 text-slate-600 dark:text-slate-300">Цены</a>
                 <a href="#process" class="block py-2 text-slate-600 dark:text-slate-300">Этапы</a>
                 <a href="#contact" class="block py-2 text-slate-600 dark:text-slate-300">Контакты</a>
@@ -969,5 +969,27 @@
             });
         }
     </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".feature-card").forEach((card, i) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        delay: i * 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
