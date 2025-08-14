@@ -969,27 +969,5 @@
             });
         }
     </script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray(".feature-card").forEach((card, i) => {
-      gsap.from(card, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        delay: i * 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      });
-    });
-  });
-</script>
-
 </body>
 </html>
